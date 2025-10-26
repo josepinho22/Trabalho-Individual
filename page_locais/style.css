@@ -1,0 +1,369 @@
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Josefin Slab', serif !important;
+}
+
+.navbar * {
+  font-family: 'Josefin Slab', serif !important;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+  display: block;
+  filter: brightness(100%);
+}
+
+.nav-link {
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  transition: color 0.2s ease-in-out;
+  color: #fff !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+#lookup-hero {
+  min-height: 100vh;
+  background: url("./images/location-bg.jpg") center/cover no-repeat;
+  position: relative;
+  padding-top: clamp(15px, 4vh, 35px);
+}
+
+#lookup-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+  z-index: 0;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.lookup-card {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 470px;
+  background: #e6e6e6;
+  border-radius: 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  padding: 6.5rem 2.4rem 6.5rem;
+}
+
+.lookup-card .form-label {
+  display: block;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.55rem;
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   SELECTS
+   ========================================================= */
+.select-wrap {
+  position: relative;
+}
+
+.form-select-custom {
+  width: 100%;
+  background-color: #ffffff !important;
+  border: 2px solid #b5b5b5;
+  border-radius: 14px;
+  padding: 1rem 3rem 1rem 1.2rem;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-height: 64px;
+}
+
+.form-select-custom:hover {
+  border-color: #8b8a3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-select-custom:focus {
+  border-color: #7b7a2f;
+  box-shadow: 0 0 0 4px rgba(123, 122, 47, 0.25);
+}
+
+.select-wrap .chev {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.35rem;
+  color: #000;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+.btn-olive {
+  position: relative;
+  z-index: 6;
+  display: block;
+  width: 100%;
+  margin-top: 0.8rem;
+  background: #7b7a2f;
+  color: #fff;
+  font-weight: 700;
+  border: 0;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-size: 1.15rem;
+  min-height: 64px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-olive:hover {
+  background: #696826;
+  transform: translateY(-1px);
+}
+
+.btn-olive:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+#map {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 40vw);
+  height: min(320px, 32vh);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  margin-top: -0.3rem;
+}
+
+/* =========================================================
+CARD DETAILS
+   ========================================================= */
+.place-card {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 40vw);
+  padding: 1.1rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  margin-top: 1rem;
+}
+
+.place-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.35rem;
+}
+
+.place-link {
+  color: #d8e0ff;
+  text-decoration: none;
+}
+
+.place-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 992px) {
+
+  #map,
+  .place-card {
+    width: 94vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #map {
+    height: 45vh;
+    margin-top: 1.25rem;
+  }
+
+  .place-card {
+    margin-top: 1.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #lookup-hero {
+    padding-top: 84px;
+  }
+
+  .lookup-card {
+    margin-top: 1rem;
+    padding: 2rem 1.6rem 1.8rem;
+    border-radius: 24px;
+  }
+
+  .form-select-custom {
+    min-height: 66px;
+    font-size: 1.1rem;
+    border-radius: 16px;
+  }
+
+  .btn-olive {
+    font-size: 1.1rem;
+    padding: 1rem 1.4rem;
+    border-radius: 16px;
+  }
+
+  #map {
+    height: 320px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #lookup-hero {
+    padding-top: clamp(10px, 3.6vh, 28px);
+  }
+
+  .lookup-card {
+    margin-top: -0.35rem;
+  }
+
+  #map {
+    margin-top: -0.35rem;
+  }
+}
+
+/* =========================================================
+   LEAFLET
+   ========================================================= */
+.leaflet-container img,
+.leaflet-container .leaflet-marker-icon,
+.leaflet-container .leaflet-marker-shadow {
+  max-width: none !important;
+}
+
+/* =========================================================
+MODAL BUTTON
+   ========================================================= */
+.btn-primary {
+  background-color: #7b7a2f !important;
+  border-color: #7b7a2f !important;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.05rem;
+  min-width: 130px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: #696826 !important;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+
+/* =========================================================
+   MOBILE Menu
+   ========================================================= */
+@media (max-width: 991.98px) {
+  .menu-blur-overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    backdrop-filter: blur(6px) brightness(.9);
+    -webkit-backdrop-filter: blur(6px) brightness(.9);
+    background: rgba(0, 0, 0, .22);
+    z-index: 900;
+  }
+
+  .navbar-toggler[aria-expanded="true"]~.menu-blur-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar {
+    z-index: 1000;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    z-index: 1002;
+  }
+
+  .navbar .navbar-collapse,
+  .navbar .navbar-nav {
+    position: relative;
+    z-index: 1001;
+  }
+
+  .navbar .navbar-collapse.collapsing .nav-link,
+  .navbar .navbar-collapse.show .nav-link {
+    color: #fff !important;
+    text-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    transition: color .15s ease;
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  filter: none !important;
+}
+
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-blur-overlay {
+    transition: none !important;
+  }
+}

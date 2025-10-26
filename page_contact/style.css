@@ -1,0 +1,194 @@
+#hero-section {
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), 
+    url("./images/bg-contact.jpg") center / cover no-repeat;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    max-height: 40px;
+    width: auto;
+    display: block;
+}
+nav {
+    font-family: 'Josefin Slab', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 50px;
+    height: 80px;
+}
+
+/* ===================== CONTACT CARD ===================== */
+.contact-card {
+    background: rgba(0, 0, 0, .92);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 1.25rem;
+    box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .6);
+    max-width: 420px;
+}
+
+.contact-card .form-control {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: #fff;
+    border-radius: .75rem;
+}
+.contact-card .form-control::placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+.contact-card .btn {
+    display: block;
+    width: 100%;
+    border-radius: 2rem;
+    border-width: 2px;
+    margin: 0 auto;
+}
+
+.contact-card form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================== QUOTE ===================== */
+.quote {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 992px) {
+    #hero-section { padding-top: .5rem; }
+
+}
+
+.modal-top {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh; 
+}
+
+@media (min-width: 992px) {
+  .modal-top {
+    align-items: flex-start; 
+    margin-top: 6rem;        
+  }
+}
+
+
+.contact-card {
+  background: rgba(0,0,0,.92);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 1.5rem;
+  box-shadow: 0 .75rem 2rem rgba(0,0,0,.6);
+  max-width: 420px;
+}
+
+.contact-card .form-label {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.contact-card .form-control {
+  background: #fff !important;
+  color: #0f0f0f !important;
+  border: none !important;
+  border-radius: 1rem;
+  padding: .9rem 1rem;
+  box-shadow: 0 2px 0 rgba(0,0,0,.06) inset;
+}
+
+.contact-card .form-control::placeholder {
+  color: rgba(0,0,0,.45);
+}
+
+.contact-card .form-control:focus {
+  box-shadow: 0 0 0 .25rem rgba(255,255,255,.25);
+}
+
+.contact-card .btn {
+  border: 2px solid #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+  border-radius: 999px;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+.contact-card .btn:hover,
+.contact-card .btn:focus {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+#hero-section .col-lg-7 {
+  color: #eef2f5;                
+}
+#hero-section .col-lg-7 p {
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  font-weight: 500;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+@media (max-width: 991.98px){
+  .menu-blur-overlay{
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+    backdrop-filter: blur(6px) brightness(.9);
+    -webkit-backdrop-filter: blur(6px) brightness(.9);
+    background: rgba(0,0,0,.22);        
+    z-index: 900;                         
+  }
+
+  .navbar-toggler[aria-expanded="true"] ~ .menu-blur-overlay{
+    opacity: 1;
+    pointer-events: auto;               
+  }
+
+  .navbar{ z-index: 1000; }
+  .navbar-toggler{ position: relative; z-index: 1002; }
+  .navbar .navbar-collapse,
+  .navbar .navbar-nav{ position: relative; z-index: 1001; }
+
+  .navbar .navbar-collapse.collapsing .nav-link,
+  .navbar .navbar-collapse.show .nav-link{
+    color: #fff !important;
+    text-shadow: 0 0 6px rgba(0,0,0,.5);
+    transition: color .15s ease;
+  }
+
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon{
+    filter: invert(1) brightness(2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .menu-blur-overlay{ transition: none !important; }
+}
+
+
+.navbar-toggler .navbar-toggler-icon{
+  filter: none !important;
+}
+
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{
+  filter: invert(1) brightness(2);
+}
+

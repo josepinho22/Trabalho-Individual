@@ -1,0 +1,431 @@
+ @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&display=swap');
+
+
+
+ /* ===========================
+   RESET / BASE
+   =========================== */
+ html,
+ body {
+
+   font-family: 'Jura', sans-serif;
+   font-weight: 700;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+ }
+
+ h2 {
+   font-size: 20px;
+ }
+
+ a {
+   cursor: pointer !important;
+ }
+
+ /* ===========================
+   NAVBAR
+   =========================== */
+ .navbar {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 10;
+   background-color: transparent !important;
+   font-size: 25px;
+ }
+
+ /* ===========================
+   HERO
+   =========================== */
+ #hero-section {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 0;
+ }
+
+ #hero-section .bg-img {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: -1;
+ }
+
+ #hero-section .text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: #fff;
+   line-height: 1.8;
+   letter-spacing: 0.3px;
+   z-index: 1;
+ }
+
+ #hero-section .text h2,
+ .text h2 {
+   font-family: 'Josefin Slab', serif;
+   font-size: 85px;
+   font-weight: 700;
+   letter-spacing: 5px;
+ }
+
+
+
+ .main-page-section-text {
+   font-size: 30px;
+ }
+
+
+ /* ===========================
+   REMOTE
+   =========================== */
+ #remote-section {
+   background-color: rgba(180, 155, 44, 0.25);
+ }
+
+ #remote-section #slogan {
+   font-size: 43px;
+ }
+
+ .highlight {
+   color: #686931;
+   font-weight: 600;
+ }
+
+ #remote-section .lista {
+   list-style-type: none;
+   padding-left: 0;
+   margin: 0;
+ }
+
+ .corner-only-left {
+   background:
+     linear-gradient(to right, black 10px, transparent 4px) 0 0,
+     linear-gradient(to bottom, black 10px, transparent 4px) 0 0;
+   background-repeat: no-repeat;
+   background-size: 40px 40px;
+ }
+
+ .corner-only-right {
+   background:
+     linear-gradient(to left, black 10px, transparent 4px) 100% 100%,
+     linear-gradient(to top, black 10px, transparent 4px) 100% 100%;
+   background-repeat: no-repeat;
+   background-size: 40px 40px;
+ }
+
+ /* ===========================
+   ACCOMMODATION
+   =========================== */
+ #accommodation-section {
+   background-color: black;
+ }
+
+ #accommodation-section img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+ }
+
+ /* ===========================
+   PLACES
+   =========================== */
+ #places-section {
+   background-color: rgba(180, 155, 44, 0.25);
+ }
+
+ #places-section img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+ }
+
+ .section-text {
+   text-align: center;
+   padding: 60px 20px;
+ }
+
+ .border-start {
+   border-left: 1px solid rgba(0, 0, 0, .125) !important;
+ }
+
+ /* ===========================
+   BLOG
+   =========================== */
+ #blog-section {
+   position: relative;
+   height: 60vh;
+   overflow: hidden;
+   z-index: 0;
+ }
+
+ #blog-section .blog-img {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+
+ #blog-section .blog-btn {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: #fff;
+   line-height: 1.8;
+   letter-spacing: 0.3px;
+   z-index: 1;
+ }
+
+ #blog-btn-style {
+   border: 0;
+ }
+
+ /* ===========================
+   BUTTONS
+   =========================== */
+ .btn {
+   border: 2px solid;
+   border-radius: 35px;
+   width: 309px !important;
+   height: 77px;
+   font-size: 25px;
+ }
+
+ .btn-dark {
+   --bs-btn-bg: #000 !important;
+   --bs-btn-border-color: #000 !important;
+   --bs-btn-hover-bg: #111 !important;
+   --bs-btn-hover-border-color: #000 !important;
+ }
+
+ .btn-outline-dark {
+   --bs-btn-color: #000 !important;
+   --bs-btn-border-color: #000 !important;
+   --bs-btn-hover-color: #fff !important;
+   --bs-btn-hover-bg: #000 !important;
+   --bs-btn-hover-border-color: #000 !important;
+ }
+
+ #btn-bottom-right,
+ #btn-blog-right {
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+   font-size: 2.5rem;
+   cursor: pointer;
+ }
+
+ #btn-bottom-right {
+   color: white;
+ }
+
+ #btn-blog-right {
+   color: black;
+ }
+
+ #btn-bottom-left {
+   position: absolute;
+   bottom: 20px;
+   left: 20px;
+   font-size: 2.5rem;
+   cursor: pointer;
+ }
+
+ /* ===========================
+    MEDIA QUERIES
+   =========================== */
+ @media (max-width: 768px) {
+   #remote-section #slogan {
+     font-size: 32px;
+   }
+
+   #hero-section .text h2 {
+     font-size: 2.25rem;
+     letter-spacing: 3px;
+   }
+ }
+
+
+
+/* ===========================
+   REMOTE SECTION 
+   =========================== */
+#remote-section {
+  background-color: #ece6cc; 
+  font-family: 'Jura', sans-serif;
+  color: #1a1a1a;
+}
+
+#remote-section .remote-container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#slogan {
+  font-size: clamp(2rem, 3vw + 1rem, 4.5rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  max-width: 18ch;
+}
+
+#remote-section .highlight {
+  color: #7c7a4a; 
+  font-weight: 600;
+}
+
+.remote-title {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* === lists === */
+.job-list {
+  list-style: none;
+  padding: 2rem 2.5rem;
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: left;
+  font-weight: 500;
+  position: relative;
+}
+
+.corner-top-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55px;
+  height: 55px;
+  border-top: 10px solid #000;
+  border-left: 10px solid #000;
+}
+
+.corner-bottom-right::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  border-bottom: 10px solid #000;
+  border-right: 10px solid #000;
+}
+
+@media (max-width: 992px) {
+  #slogan {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .remote-title {
+    margin-top: 2rem;
+  }
+
+  .job-list {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  #remote-section .d-flex {
+    flex-wrap: nowrap !important; 
+    justify-content: center !important;
+    gap: 2rem; 
+  }
+
+  #remote-section .job-list {
+    flex: 1 1 45%; 
+    max-width: 45%;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+#remote-section .border-end {
+  border-right: 1px solid #000 !important;
+}
+
+
+@media (max-width: 768px) {
+  #remote-section .border-end {
+    border-right: none !important;   
+    border-bottom: 1px solid #000 !important;  
+    margin-bottom: 2.5rem;           
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+@media (max-width: 991.98px) {
+
+  .menu-blur-overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;              
+    backdrop-filter: blur(6px) brightness(.9);
+    -webkit-backdrop-filter: blur(6px) brightness(.9);
+    background: rgba(0, 0, 0, 0.25);           
+    
+    z-index: 900;                               
+    
+  }
+
+  .navbar-toggler[aria-expanded="true"] ~ .menu-blur-overlay {
+    opacity: 1;
+    pointer-events: auto;                       
+  }
+
+  .site-content {
+    transition: transform .28s ease;
+  }
+
+  .navbar-toggler[aria-expanded="true"] ~ .menu-blur-overlay ~ .collapse ~ .site-content,
+  .navbar-toggler[aria-expanded="true"] ~ .menu-blur-overlay ~ .site-content {
+    transform: none !important;                
+  }
+
+  .navbar {
+    z-index: 1000;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    z-index: 1002;
+  }
+
+  .navbar .navbar-collapse,
+  .navbar .navbar-nav {
+    position: relative;
+    z-index: 1001;                              
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-blur-overlay,
+  .site-content {
+    transition: none !important;
+    transform: none !important;
+  }
+}

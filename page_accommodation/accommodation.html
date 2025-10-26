@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acomodações</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand px-4" href="../index.html">
+        <img src="./images/vector-dark.png" alt="Home - brand logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <span class="menu-blur-overlay" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-hidden="true"></span>
+
+      <div class="collapse navbar-collapse pt-5" id="mainNav" style="justify-content:end;">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item px-4"><a class="nav-link text-dark" href="#">ACOMODAÇÃO</a></li>
+          <li class="nav-item px-4"><a class="nav-link text-dark" href="../page_locais/location.html">LOCAIS</a></li>
+          <li class="nav-item px-4"><a class="nav-link text-dark" href="../index.html#blog-section">BLOG</a></li>
+          <li class="nav-item px-4"><a class="nav-link text-dark" href="../page_contact/contact.html">CONTATOS</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <section id="hero-section">
+    <div class="hero-banner">
+      <h1>O SEU NOVO OFFICE</h1>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section id="cards-section" class="text-center p-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <!-- Hippie Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/hippie-ride.jpg" class="card-img-top hippie" alt="Hippie Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Hippie Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 50€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cozinha equipada;</li>
+                <li>Cama de casal;</li>
+                <li>WC portátil;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-hippie">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Harvest Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/harvest-ride.jpg" class="card-img-top harvest" alt="Harvest Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Harvest Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 80€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cozinha equipada;</li>
+                <li>Cama de casal;</li>
+                <li>WC portátil;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-harvest">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nomade Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/nomade-ride.jpg" class="card-img-top nomade" alt="Nomade Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Nomade Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 100€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cama de casal;</li>
+                <li>WC incorporado;</li>
+                <li>Cozinha equipada;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-nomade">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Family Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/family-ride.jpg" class="card-img-top family" alt="Family Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Family Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 95€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cama de casal;</li>
+                <li>WC incorporado;</li>
+                <li>Cozinha equipada;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-family">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Surf Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/surf-ride.jpg" class="card-img-top surf" alt="Surf Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Surf Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 80€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cama de casal;</li>
+                <li>Mini cozinha;</li>
+                <li>WC portátil;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-surf">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cave Ride -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/cave-ride.jpg" class="card-img-top cave" alt="Cave Ride">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Cave Ride</h5>
+              <p class="card-text text-center mb-2">A partir de 85€/dia</p>
+              <ul class="card-text text-start">
+                <li>Equipada com:</li>
+                <li>Cama de casal;</li>
+                <li>Cozinha equipada;</li>
+                <li>WC portátil;</li>
+                <li>Carregador USB;</li>
+              </ul>
+              <button class="btn btn-primary mx-auto mt-auto" data-bs-toggle="modal" data-bs-target="#modal-cave">+
+                info</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODAIS ===== -->
+
+  <!-- Hippie -->
+  <div class="modal fade" id="modal-hippie" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/hippie-ride.jpg" alt="Hippie Ride" class="w-100 modal-hero-img hippie" />
+          <h5 class="text-center mb-3">Hippie Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 50€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Cozinha completa – prepare suas refeições favoritas a qualquer momento.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC portátil – privacidade e conveniência onde quer que vá.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Harvest -->
+  <div class="modal fade" id="modal-harvest" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/harvest-ride.jpg" alt="Harvest Ride" class="w-100 modal-hero-img harvest" />
+          <h5 class="text-center mb-3">Harvest Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 80€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Cozinha completa – prepare suas refeições favoritas a qualquer momento.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC portátil – privacidade e conveniência onde quer que vá.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nomade -->
+  <div class="modal fade" id="modal-nomade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/nomade-ride.jpg" alt="Nomade Ride" class="w-100 modal-hero-img nomade" />
+          <h5 class="text-center mb-3">Nomade Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 100€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Cozinha completa – prepare suas refeições favoritas a qualquer momento.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC incorporado – ainda mais comodidade e autonomia.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Family -->
+  <div class="modal fade" id="modal-family" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/family-ride.jpg" alt="Family Ride" class="w-100 modal-hero-img family" />
+          <h5 class="text-center mb-3">Family Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 95€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Cozinha completa – prepare suas refeições favoritas a qualquer momento.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC incorporado – privacidade e praticidade.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Surf -->
+  <div class="modal fade" id="modal-surf" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/surf-ride.jpg" alt="Surf Ride" class="w-100 modal-hero-img surf" />
+          <h5 class="text-center mb-3">Surf Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 80€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Mini cozinha – prática para refeições rápidas.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC portátil – privacidade e conveniência onde quer que vá.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cave -->
+  <div class="modal fade" id="modal-cave" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-rental">
+        <div class="modal-body">
+          <img src="./images/cave-ride.jpg" alt="Cave Ride" class="w-100 modal-hero-img cave" />
+          <h5 class="text-center mb-3">Cave Ride</h5>
+          <div class="modal-copy">
+            <p>Imagine acordar com o som das ondas na praia, estacionar à beira de uma floresta serena
+              ou partir numa viagem espontânea, sem preocupações com hotéis ou horários. Alugar uma
+              carrinha adaptada é sinónimo de liberdade, conforto e aventura – tudo em um só lugar!</p>
+
+            <p>A nossa carrinha é a solução perfeita para viajantes que buscam autonomia e praticidade,
+              sem abrir mão do essencial. <strong>Por apenas 85€ por dia</strong>, você tem um lar sobre rodas
+              totalmente
+              equipado para tornar sua viagem inesquecível:</p>
+
+            <ul class="checklist">
+              <li>✔ Cozinha completa – prepare suas refeições favoritas a qualquer momento.</li>
+              <li>✔ Cama de casal confortável – descanse com todo o espaço que precisa.</li>
+              <li>✔ WC portátil – privacidade e conveniência onde quer que vá.</li>
+              <li>✔ Carregador USB – mantenha seus dispositivos sempre prontos para uso.</li>
+            </ul>
+
+            <p><strong>Por que escolher a nossa carrinha?</strong></p>
+            <ul>
+              <li>Economia: mais barato que hotéis e com total flexibilidade.</li>
+              <li>Conforto: tudo o que você precisa em um espaço compacto e bem organizado.</li>
+              <li>Aventura personalizada: viaje no seu ritmo, pare onde quiser e crie memórias únicas.</li>
+            </ul>
+
+            <p>Seja para um fim de semana romântico, uma escapadinha em família ou uma viagem solo cheia
+              de descobertas, a nossa carrinha está pronta para ser a sua companheira de estrada.
+              Reserve já e transforme qualquer destino em casa!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-rent">Alugar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center text-white py-5">
+    <div class="container">
+      <h5 class="fw-bold mb-4" style="font-size: 30px;">LIVING AROUND</h5>
+      <div class="d-flex justify-content-center gap-4 mb-4">
+        <a href="#" class="text-secondary fs-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-secondary fs-3"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-secondary fs-3"><i class="bi bi-twitter-x"></i></a>
+      </div>
+      <p class="text-secondary mb-0 small">Power by Cesae Digital</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

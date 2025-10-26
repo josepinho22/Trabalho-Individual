@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contatos</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand px-4" href="../index.html">
+        <img src="../images/Vector.png" alt="Home - brand logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <span class="menu-blur-overlay" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-hidden="true"></span>
+
+      <div class="collapse navbar-collapse" id="mainNav" style="justify-content: end;">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item px-4"><a class="nav-link" href="../page_accommodation/accommodation.html">ACOMODACAO</a>
+          </li>
+          <li class="nav-item px-4"><a class="nav-link" href="../index.html#places-section">LOCAIS</a></li>
+          <li class="nav-item px-4"><a class="nav-link" href="../index.html#blog-section">BLOG</a></li>
+          <li class="nav-item px-4"><a class="nav-link" href="./page_contact/contact.html">CONTATOS</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO-->
+  <section id="lookup-hero" class="d-flex align-items-center">
+    <div class="container px-3 px-lg-0">
+      <div class="row align-items-start g-4 g-lg-5">
+
+
+        <div class="col-lg-5 d-flex justify-content-center">
+          <div class="lookup-card">
+            <form id="lookup-form">
+              <div class="mb-4">
+                <label class="form-label">Escolha o país:</label>
+                <div class="select-wrap">
+                  <select id="country-select" class="form-select-custom" aria-label="Escolha o país">
+                    <option selected disabled>país</option>
+                    <option value="PT">Portugal</option>
+                    <option value="RU">Rússia</option>
+                    <option value="CA">Canadá</option>
+                    <option value="CN">China</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="BR">Brasil</option>
+                  </select>
+                  <span class="chev" aria-hidden="true">▾</span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label">Escolha a cidade:</label>
+                <div class="select-wrap">
+                  <select id="city-select" class="form-select-custom" aria-label="Escolha a cidade" disabled>
+                    <option selected disabled>cidade</option>
+                  </select>
+                  <span class="chev" aria-hidden="true">▾</span>
+                </div>
+              </div>
+
+              <button type="submit" id="show-btn" class="btn-olive">Ver</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-7 d-flex flex-column align-items-center align-items-lg-end">
+          <div id="map" aria-label="Mapa" role="region" style="display:none;"></div>
+
+          <div id="card-generic" class="place-card mt-3" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true" aria-labelledby="errorModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius:16px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Falta informação</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="errorModalBody">
+          Por favor, selecione o país e a cidade.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary px-5 py-2" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+    // === MAP ===
+    const map = L.map('map').setView([40.722, -8.394], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    window.addEventListener('load', () => map.invalidateSize());
+
+    const markersPT = {
+      'Porto': L.marker([41.1574902, -8.6018518]).bindPopup('<b>Living Around — Porto</b><br>Rua da Alegria, 666'),
+      'Lisboa': L.marker([38.7223, -9.1393]).bindPopup('<b>Living Around — Lisboa</b><br>Avenida da Liberdade, 101'),
+      'Faro': L.marker([37.0194, -7.9322]).bindPopup('<b>Living Around — Faro</b><br>Praça Dom Francisco Gomes, 45')
+    };
+    const markersBR = {
+      'São Paulo': L.marker([-23.5505, -46.6333]).bindPopup('<b>Living Around — São Paulo</b><br>Praça da Sé'),
+      'Rio de Janeiro': L.marker([-22.9068, -43.1729]).bindPopup('<b>Living Around — Rio de Janeiro</b><br>Praça Floriano'),
+      'Fortaleza': L.marker([-3.7319, -38.5267]).bindPopup('<b>Living Around — Fortaleza</b><br>Praia de Iracema')
+    };
+    const markersRU = {
+      'Moscovo': L.marker([55.7558, 37.6173]).bindPopup('<b>Living Around — Moscovo</b><br>Praça Vermelha, 109012'),
+      'São Petersburgo': L.marker([59.9343, 30.3351]).bindPopup('<b>Living Around — São Petersburgo</b><br>Nevsky Prospekt, 1')
+    };
+    const markersCA = {
+      'Toronto': L.marker([43.6532, -79.3832]).bindPopup('<b>Living Around — Toronto</b><br>100 Queen St W'),
+      'Vancouver': L.marker([49.2827, -123.1207]).bindPopup('<b>Living Around — Vancouver</b><br>Robson St / Howe St')
+    };
+    const markersCN = {
+      'Pequim': L.marker([39.9042, 116.4074]).bindPopup('<b>Living Around — Pequim</b><br>Praça Tiananmen'),
+      'Xangai': L.marker([31.2304, 121.4737]).bindPopup('<b>Living Around — Xangai</b><br>Praça do Povo')
+    };
+    const markersUS = {
+      'Nova Iorque': L.marker([40.7128, -74.0060]).bindPopup('<b>Living Around — Nova Iorque</b><br>City Hall Park'),
+      'Los Angeles': L.marker([34.0522, -118.2437]).bindPopup('<b>Living Around — Los Angeles</b><br>200 N Spring St')
+    };
+
+
+    const ALL_MARKERS = { PT: markersPT, RU: markersRU, CA: markersCA, CN: markersCN, US: markersUS, BR: markersBR };
+    Object.values(ALL_MARKERS).forEach(g => Object.values(g).forEach(m => m.addTo(map)));
+
+
+    const CITY_META = {
+      PT: {
+        'Porto': { addr: 'Rua da Alegria, 666 · 4000-789 — Porto', email: 'livingaround_porto@living.com' },
+        'Lisboa': { addr: 'Av. da Liberdade, 101 · 1000-123 — Lisboa', email: 'livingaround_lisboa@living.com' },
+        'Faro': { addr: 'Praça Dom Francisco Gomes, 45 · 8000-168 — Faro', email: 'livingaround_faro@living.com' }
+      },
+      BR: {
+        'São Paulo': { addr: 'Praça da Sé, Sé, São Paulo — SP, 01001-000, Brasil', email: 'livingaround_sao_paulo@living.com' },
+        'Rio de Janeiro': { addr: 'Praça Floriano, Centro, Rio — RJ, 20031-050, Brasil', email: 'livingaround_rio_de_janeiro@living.com' },
+        'Fortaleza': { addr: 'Av. Beira Mar, Praia de Iracema — Fortaleza, CE, Brasil', email: 'livingaround_fortaleza@living.com' }
+      },
+      RU: {
+        'Moscovo': { addr: 'Praça Vermelha, Moscovo, 109012, Rússia', email: 'livingaround_moscovo@living.com' },
+        'São Petersburgo': { addr: 'Nevsky Prospekt, 1, São Petersburgo, Rússia', email: 'livingaround_sao_petersburgo@living.com' }
+      },
+      CA: {
+        'Toronto': { addr: '100 Queen St W, Toronto, ON M5H 2N2, Canadá', email: 'livingaround_toronto@living.com' },
+        'Vancouver': { addr: 'Robson St e Howe St, Vancouver, BC V6Z, Canadá', email: 'livingaround_vancouver@living.com' }
+      },
+      CN: {
+        'Pequim': { addr: 'Praça Tiananmen, Dongcheng, Pequim 100006, China', email: 'livingaround_pequim@living.com' },
+        'Xangai': { addr: 'Praça do Povo, Huangpu, Xangai 200003, China', email: 'livingaround_xangai@living.com' }
+      },
+      US: {
+        'Nova Iorque': { addr: 'City Hall Park, Nova Iorque, NY 10007, EUA', email: 'livingaround_nova_iorque@living.com' },
+        'Los Angeles': { addr: '200 N Spring St, Los Angeles, CA 90012, EUA', email: 'livingaround_los_angeles@living.com' }
+      },
+
+    };
+
+    const COUNTRY_LABEL = { PT: 'Portugal', RU: 'Rússia', CA: 'Canadá', CN: 'China', US: 'Estados Unidos', BR: 'Brasil' };
+
+    const form = document.getElementById('lookup-form');
+    const countrySel = document.getElementById('country-select');
+    const citySel = document.getElementById('city-select');
+    const cardGeneric = document.getElementById('card-generic');
+
+    countrySel.addEventListener('change', () => {
+      const cc = countrySel.value;
+      citySel.innerHTML = '<option selected disabled>cidade</option>';
+      citySel.disabled = false;
+
+      const list = ALL_MARKERS[cc] ? Object.keys(ALL_MARKERS[cc]) : [];
+      list.forEach(cidade => {
+        const opt = document.createElement('option');
+        opt.value = cidade;
+        opt.textContent = cidade;
+        citySel.appendChild(opt);
+      });
+    });
+
+    function esconderCartao() {
+      if (cardGeneric) { cardGeneric.style.display = 'none'; cardGeneric.innerHTML = ''; }
+    }
+
+    function renderizarCartao(cc, cidade) {
+      const meta = CITY_META[cc]?.[cidade];
+      if (!meta) return;
+      cardGeneric.innerHTML = `
+      <h3 class="place-title">LIVING AROUND – ${cidade}${cc !== 'PT' ? ` (${COUNTRY_LABEL[cc]})` : ''}</h3>
+      <p class="mb-1">${meta.addr}</p>
+      <p class="mb-0"><a class="place-link" href="mailto:${meta.email}">${meta.email}</a></p>
+    `;
+      cardGeneric.style.display = 'block';
+    }
+
+    const errorModalEl = document.getElementById('errorModal');
+    const errorModal = errorModalEl ? new bootstrap.Modal(errorModalEl) : null;
+    const errorBodyEl = document.getElementById('errorModalBody');
+
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const cc = countrySel.value;
+      const cidade = citySel.value;
+
+      if (!cc || cc === 'país') {
+        if (errorModal) { errorBodyEl.textContent = 'Por favor, selecione um país.'; errorModal.show(); }
+        return;
+      }
+      if (citySel.disabled || !cidade || cidade === 'cidade') {
+        if (errorModal) { errorBodyEl.textContent = 'Por favor, selecione uma cidade.'; errorModal.show(); }
+        return;
+      }
+
+      const mapDiv = document.getElementById('map');
+      if (mapDiv && mapDiv.style.display === 'none') {
+        mapDiv.style.display = 'block';
+        setTimeout(() => map.invalidateSize(), 250);
+      }
+
+      esconderCartao();
+      renderizarCartao(cc, cidade);
+
+      const mk = ALL_MARKERS[cc]?.[cidade];
+      if (mk) { map.setView(mk.getLatLng(), 13); mk.openPopup(); }
+    });
+
+    esconderCartao();
+    citySel.disabled = true;
+  </script>
+</body>
+
+</html>
